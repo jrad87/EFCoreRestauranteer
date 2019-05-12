@@ -1,0 +1,22 @@
+@using System
+@using System.Collections.Generic
+@model IEnumerable<EFCoreRestauranteer.Models.Review>
+
+@foreach(EFCoreRestauranteer.Models.Review Review in @Model)
+{
+    <div>
+        <h2>Review for @Review.RestaurantName : @Review.Rating Stars</h2>
+        <h3>@Review.DateVisited.ToString(@"MM\/dd\/yyyy")</h3>
+        <p>@Review.Text</p>
+        <p>Was this review helpful? (@Review.HelpfulVotes out of @(@Review.HelpfulVotes + @Review.UnhelpfulVotes) people found this helpful)</p>
+        <form action="/helpful/@Review.Id" method="POST">
+            <button type="submit">Yes</button>
+        </form>
+        <form action="/unhelpful/@Review.Id" method="POST">
+            <button type="submit">No</button>
+        </form>
+    </div>
+}
+<div>
+    <a href="/">Write A Review</a>
+</div>

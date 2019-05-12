@@ -1,0 +1,38 @@
+@using System
+@model EFCoreRestauranteer.Models.ReviewViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+    <form asp-controller="Home" asp-action="SubmitReview" method="POST">
+        <div asp-validation-summary="All"></div>
+        <div>
+            <!--p><span asp-validation-for="RestaurantName"></span></p-->
+            <label asp-for="RestaurantName"></label>
+            <input asp-for="RestaurantName">
+        </div>
+        <div>
+            <!--p><span asp-validation-for="ReviewerName"></span></p-->
+            <label asp-for="ReviewerName"></label>
+            <input asp-for="ReviewerName">
+        </div>
+        <div>
+            <!--p><span asp-validation-for="Rating"></span></p-->
+            <label asp-for="Rating"></label>
+            <input asp-for="Rating">
+        </div>
+        <div>
+            <!--p><span asp-validation-for="Text"></span></p-->
+            <label asp-for="Text"></label>
+            <textarea asp-for="Text"></textarea>
+        </div>
+        <div>
+            <!--p><span asp-validation-for="DateVisited"></span></p-->
+            <label asp-for="DateVisited"></label>
+            <input asp-for="DateVisited" placeholder="mm/dd/yyyy">
+        </div>
+        <button type="submit">Submit Review</button>
+    </form>
+</div>
+<a href="/reviews">Reviews</a>
