@@ -4,12 +4,12 @@ To run this application using Asp.NET Core, Postgres must be installed and runni
 
 The connection must be configured with a JSON file named dbsettings.json in the app root, with the following structure:   
 `
-{
-    "DbInfo" : {
-        "Name" : "Postgres",
-        "ConnectionString" : [Connection string to your database]
-    }
-}
+{  
+    "DbInfo" : {  
+        "Name" : "Postgres",  
+        "ConnectionString" : [Connection string to your database]  
+    }  
+}  
 `  
 
 Before attempting to run the application, run   
